@@ -1,5 +1,5 @@
 from datetime import datetime
-from QueueClass import QueueClass
+from QueueClass import Queue
 
 
 class User:
@@ -37,7 +37,7 @@ class Incident:
 
 class IncidentManager:
     def __init__(self):
-        self.queue = QueueClass()
+        self.queue = Queue
 
     pass
 
