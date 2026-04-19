@@ -1,0 +1,56 @@
+from datetime import datetime
+from QueueClass import QueueClass
+
+
+class User:
+    def __init__(self, username):
+        self.username = username
+        self.role = "User"
+
+
+class Admin(User):
+    def __init__(self, username):
+        super().__init__(username)
+        self.role = "Admin"
+
+
+class Analyst(User):
+    def __init__(self, username):
+        super().__init__(username)
+        self.role = "Analyst"
+
+
+class Incident:
+    def __init__(self, incident_id, incident_type, severity, description):
+        self.incident_id = incident_id
+        self.incident_type = incident_type
+        self.severity = severity
+        self.description = description
+        self.timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.status = "Open"
+
+    def __str__(self):
+        return (f"[{self.incident_id}] {self.incident_type} | "
+                f"Severity: {self.severity} | Status: {self.status} | "
+                f"Time: {self.timestamp}")
+
+
+class IncidentManager:
+    def __init__(self):
+        self.queue = QueueClass()
+
+    pass
+
+
+def main():
+    print("Incident Management System (Development Version)")
+    print("One-third of the project is completed.\n")
+    print("Completed:")
+    print("- User, Admin, Analyst classes")
+    print("- Incident class")
+    print("- QueueClass imported")
+    print("- IncidentManager started\n")
+
+
+if __name__ == "__main__":
+    main()
