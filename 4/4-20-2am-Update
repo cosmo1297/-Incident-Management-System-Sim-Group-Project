@@ -1,0 +1,100 @@
+from datetime import datetime
+from QueueClass import Queue
+
+
+class User:
+    def __init__(self, username):
+        self.username = username
+        self.role = "User"
+
+
+class Admin(User):
+    def __init__(self, username):
+        super().__init__(username)
+        self.role = "Admin"
+
+
+class Analyst(User):
+    def __init__(self, username):
+        super().__init__(username)
+        self.role = "Analyst"
+
+
+class Incident:
+    def __init__(self, incident_id, incident_type, severity, description):
+        self.incident_id = incident_id
+        self.incident_type = incident_type
+        self.severity = severity
+        self.description = description
+        self.timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.status = "Open"
+
+    def __str__(self):
+        return (f"[{self.incident_id}] {self.incident_type} | "
+                f"Severity: {self.severity} | Status: {self.status} | "
+                f"Time: {self.timestamp}")
+
+
+class IncidentManager:
+    def __init__(self):
+        self.queue = Queue()
+
+    def add_incident(self, incident):
+        self.queue.enqueue(incident)
+        print(f"Added incident {incident.incident_id}")
+
+    def resolve_incident(self):
+        if self.queue.is_empty():
+            print("No Incidents found")
+        else:
+            incident = self.queue.dequeue()
+            incident.status = "Resolved"
+            print(f"{incident.incident_id} resolved")
+
+    def list_incidents(self):
+        if self.queue.is_empty():
+            print("No Incidents found")
+        for incident in list(self.queue.items):
+            print(f"{incident.incident_id} | {incident.incident_type}")
+
+    def search_incidents(self, search_id):
+        if self.queue.is_empty():
+            print("No incidents found")
+            return
+
+        found = False  # track if we found it
+
+        for incident in list(self.queue.items):
+            if incident.incident_id == search_id:
+                print(f" Status: {incident.status} | ID: {incident.incident_id} | Type: {incident.incident_type} | Severity: {incident.severity} |  | Description {incident.description} | Time: {incident.timestamp}")
+                found = True
+                break  # stop once found
+        if not found:
+            print(f"No ID with {search_id} was found")
+
+
+
+
+
+def main():
+
+    manager = IncidentManager()
+
+    # 🔹 Create test incidents
+    i1 = Incident("INC001", "Phishing", "High", "User received fake login email")
+    i2 = Incident("INC002", "Malware", "Critical", "System infected with ransomware")
+    i3 = Incident("INC003", "DDoS", "Medium", "Traffic spike detected on server")
+
+    # 🔹 Add incidents
+    print("Adding incidents...\n")
+    manager.add_incident(i1)
+    manager.add_incident(i2)
+    manager.add_incident(i3)
+    manager.resolve_incident()
+    manager.list_incidents()
+    manager.search_incidents("INC001")
+    manager.search_incidents("INC002")
+
+
+if __name__ == "__main__":
+    main()
