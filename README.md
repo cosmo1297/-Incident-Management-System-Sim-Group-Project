@@ -2,15 +2,15 @@
 
 
 Complete:
-    <Jules>
-    User, Admin, Analyst classes
-    Incident class
-    QueueClass imported
-    IncidentManager started
-    <Max>
-    IncidentManager Completed
-    Load Incidents from a File
-    Interactive part
+<Jules>
+User, Admin, Analyst classes
+Incident class
+QueueClass imported
+IncidentManager started
+<Max>
+IncidentManager Completed
+Load Incidents from a File
+Interactive part
 
     
 
