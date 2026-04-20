@@ -1,0 +1,12 @@
+INC021,Trojan,High,Notepad++ malicious update
+INC024, Phishing, High, Fake email from bank asking for account details
+INC025, Malware, High, Email attachment with suspicious executable file
+INCasdad
+INC026, Phishing, Medium, Fake social media account alert prompting password reset
+INC027, Ransomware, Critical, Malicious link in email claiming to be a shipping confirmation
+INC028, Phishing, Low, Fake survey email requesting personal information
+INC029, Malware, High, Email disguised as invoice with infected PDF attachment
+INC030, Phishing, Medium, Fake job offer email requesting personal information
+INC031, Social Engineering, Low, Email pretending to be from IT department asking for credentials
+INC032, Phishing, High, Fake invoice email from known vendor with malicious link
+INC033, Malware, Critical, Email with malicious attachment disguised as a resume
