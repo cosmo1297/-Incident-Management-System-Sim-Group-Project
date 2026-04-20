@@ -1,20 +1,26 @@
 4/20/26 6pm
 
-
 Complete:
-    <Jules>
+    
+    Jules
+    
     User, Admin, Analyst classes
+    
     Incident class
+    
     QueueClass imported
+    
     IncidentManager started
-    <Max>
+    
+    Max
+    
     IncidentManager Completed
+    
     Load Incidents from a File
+    
     Interactive part
 
-    
-
-Instructions Q&A to add to Readme:
+    Instructions Q&A to add to Readme:
     What is the goal of your project? 
   
     What has been completed? 
