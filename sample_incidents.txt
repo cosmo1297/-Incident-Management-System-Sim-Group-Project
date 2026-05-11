@@ -1,0 +1,4 @@
+INC001,DDoS,High,Traffic spike detected on main server
+INC002,Phishing,Medium,Suspicious email campaign targeting employees
+INC003,Malware,Critical,Ransomware detected on workstation WS-04
+INC004,Unauthorized Access,Low,Failed login attempts from unknown IP
